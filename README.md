@@ -1,5 +1,4 @@
 ![Letterboxd Logo](/images/letterboxd-app.png)
-![Cinema Amy Poehler Tina Fey](/images/amy-poehler-tina-fey-cinema.gif)
 
 # Letterboxd Analysis Project
 
@@ -20,6 +19,8 @@ With all of the choices available to us across a myriad of sources, we need bett
 
 We're using data from an app called Letterboxd, which separates itself from the pack due to it's emphasis on community and social networking around film critique. In fact, this app was first recommended to me a few years back by a friend working at the Britism Film Institute (BFI) and who happened to have a taste similar to mine. My experience with Letterboxd made me particularly interested in the app's development and future value. They've experienced immense growth in the past few years - XY stat.
 
+Letterboxd, which dubs itself a "social film discovery platform", has the ability to follow critics and see their evaluation of a wide variety of films. However, there has yet to be a way to get personalized recommendations based on your film preferences. This project solves exactly that and provides a way for Letterboxd users to get a record of the films they're most likely to enjoy.
+
 Sam Learner scrapes data from Letterboxd and hosts the datasets we used on Kaggle [here](https://www.kaggle.com/samlearner/letterboxd-movie-ratings-data). Note - for our purposes, we choose not to use his included `Users` dataset.
 
 Our two datasets are the following:
@@ -33,17 +34,14 @@ Due to the lengthy size of the dataset (over 8M film review records), I recommen
 I use descriptive analysis and determined the top-performing recommendation model to show:
 *  
 
-### Graph 1
-![graph1](./images/.png)
+### Rating Distributions Across Films
+![graph1](./images/visualization1-userfilmratings.png)
 
-### Graph 2
-![graph1](./images/.png)
+### Decades With the Most Film Ratings
+![graph1](./images/visualization2-filmreleasedate.png)
 
-### Graph 3
-![graph1](./images/.png)
-
-### Graph 4
-![graph1](./images/.png)
+### Activity Level of Users: Ratings
+![graph1](./images/visualization3-ratingsperuser.png)
 
 ## Conclusions
 
