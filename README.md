@@ -51,16 +51,16 @@ I use descriptive analysis and incrementally improved recommendation engines to 
 
 ## Conclusions
 
-* **Our final, iterated SVD model runs in about twenty minutes currently and has prediction accuracy within half a star of how a Letterboxd user tends to rate a film. Next, we'll want to create the front-end experience for a Letterboxd user to source these helpful recommendations. We could perhaps deploy this via Flask and Heroku or aim to bring into the Letterboxd app via web or iOS after testing. We'll want to ask questions to mitigate against the cold start problem and have some initial recommendations sourced in record time prior to the more personalized processing we're now capable of.
+* Our final, iterated SVD model runs in about twenty minutes currently and has prediction accuracy within half a star of how a Letterboxd user tends to rate a film. Next, we'll want to create the front-end experience for a Letterboxd user to source these helpful recommendations. We could perhaps deploy this via Flask and Heroku or aim to bring into the Letterboxd app via web or iOS after testing. We'll want to ask questions to mitigate against the cold start problem and have some initial recommendations sourced in record time prior to the more personalized processing we're now capable of.
 
 ## Next Steps
 
 This goes beyond our Letterboxed analysis and is worth further exploration.
 
-* **Deploying this project to production is an immediate next step and the foundation for how this process can be run is in development, with more time an MVP can be presented with questions posed to the user
-* **If we were to use particular quantile groupings of user review activity to better understand the user and determine which grouping represents a general Letterboxd user - I believe this would be valuable. I can infer some of the users in our data are actually groups of people or organizations (i.e. anomalies of 70K+ reviews recorded and attributed to one username)
-* **If we were to bring in additional data, say the review text and additional categorical film data, we could create increasingly helpful clustering around user film preferences to aid in discovery. We could also bring in sentiment analysis or a prompting question at the start of the discovery/recommendation process in order to recommend content based on a person's current mood or general temperament.
-* **We focused on a collaborative filtering model in this project, but could perhaps further increase our accuracy with a hybrid approach (implicit and explicit, with a library like LightFM[here](https://github.com/lyst/lightfm))
+* Deploying this project to production is an immediate next step and the foundation for how this process can be run is in development, with more time an MVP can be presented with questions posed to the user
+* If we were to use particular quantile groupings of user review activity to better understand the user and determine which grouping represents a general Letterboxd user - I believe this would be valuable. I can infer some of the users in our data are actually groups of people or organizations (i.e. anomalies of 70K+ reviews recorded and attributed to one username)
+* If we were to bring in additional data, say the review text and additional categorical film data, we could create increasingly helpful clustering around user film preferences to aid in discovery. We could also bring in sentiment analysis or a prompting question at the start of the discovery/recommendation process in order to recommend content based on a person's current mood or general temperament.
+* We focused on a collaborative filtering model in this project, but could perhaps further increase our accuracy with a hybrid approach (implicit and explicit, with a library like LightFM[here](https://github.com/lyst/lightfm))
 
 ## For More Information
 
