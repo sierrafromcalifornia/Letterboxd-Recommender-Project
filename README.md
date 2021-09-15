@@ -31,20 +31,17 @@ Our two datasets are the following:
 
 Due to the lengthy size of our datasets (over 250K films, 8M film reviews), I recommend heading to the Sam's link above for download instructions and to get the very latest version of scraped data.
 
-## Environment
-To ensure you have all required packages if you'd like to run these notebooks, an environment.yml file has been provided [here](https://www.kaggle.com/samlearner/letterboxd-movie-ratings-data). Follow the set-up instructions [here](https://www.kaggle.com/samlearner/letterboxd-movie-ratings-data) to create and activate the environment.
-
 ## Methods & Results
 
 I use descriptive analysis and incrementally improved recommendation engines to determine:
-*  The SVD recommender model from Surprise was our best performing model to date, bringing our accuracy in determining how a user would rate a film within less than a star from reality (our RMSE was within 7/10 of a star)
-*  The notable nature of Letterboxd reviews - more specifically, the breakdown and distribution of film ratings according to a five star scale - which shows us the margins are the least represented (up to 1 star, 5 stars) and the middle holds the most weight with a noticeable skew toward the higher end (3, 4, 2 in decreasing order). Coupling this data with psycographic data around the nature of film critique/ratings and which films we might watch or complete in order to give a review to begin with is worth exploring - especially when digging into the nature of recommendations and content discovery.
-*  
+*  The SVD recommender model from Surprise was our best performing model to date, bringing our accuracy in determining how a user would rate a film within less than a star from reality (our RMSE was within 7/10 of a star). When we round to the near .5 star, this means we can now predict how a movie watcher would rate a film with an accuracy range of 1/2 a star
 
-
+![results](./images/resultsvis.png)
 
 ### Rating Distributions Across Films
 ![graph1](./images/visualization1-userfilmratings.png)
+
+*  The notable nature of Letterboxd reviews - more specifically, the breakdown and distribution of film ratings according to a five star scale - which shows us the margins are the least represented (up to 1 star, 5 stars) and the middle holds the most weight with a noticeable skew toward the higher end (3, 4, 2 in decreasing order). Coupling this data with psycographic data around the nature of film critique/ratings and which films we might watch or complete in order to give a review to begin with is worth exploring - especially when digging into the nature of recommendations and content discovery.
 
 ### Decades With the Most Film Ratings
 ![graph1](./images/visualization2-filmreleasedate.png)
@@ -54,22 +51,28 @@ I use descriptive analysis and incrementally improved recommendation engines to 
 
 ## Conclusions
 
-* **
+* **Our final, iterated SVD model runs in about twenty minutes currently and has prediction accuracy within half a star of how a Letterboxd user tends to rate a film. Next, we'll want to create the front-end experience for a Letterboxd user to source these helpful recommendations. We could perhaps deploy this via Flask and Heroku or aim to bring into the Letterboxd app via web or iOS after testing. We'll want to ask questions to mitigate against the cold start problem and have some initial recommendations sourced in record time prior to the more personalized processing we're now capable of.
 
 ## Next Steps
 
 This goes beyond our Letterboxed analysis and is worth further exploration.
 
-* **Deploying this project to production is an immediate next step and the foundation was created in our [rating-system](notebooks/rating-system.ipynb) file
+* **Deploying this project to production is an immediate next step and the foundation for how this process can be run is in development, with more time an MVP can be presented with questions posed to the user
 * **If we were to use particular quantile groupings of user review activity to better understand the user and determine which grouping represents a general Letterboxd user - I believe this would be valuable. I can infer some of the users in our data are actually groups of people or organizations (i.e. anomalies of 70K+ reviews recorded and attributed to one username)
 * **If we were to bring in additional data, say the review text and additional categorical film data, we could create increasingly helpful clustering around user film preferences to aid in discovery. We could also bring in sentiment analysis or a prompting question at the start of the discovery/recommendation process in order to recommend content based on a person's current mood or general temperament.
 * **We focused on a collaborative filtering model in this project, but could perhaps further increase our accuracy with a hybrid approach (implicit and explicit, with a library like LightFM[here](https://github.com/lyst/lightfm))
 
 ## For More Information
 
-Please review my full analysis in the [presentation](presentation/Letterboxd-Analysis-Presentation.pdf) or notebooks: [exploratory](notebooks/exploratory.ipynb), [modeling phase](notebooks/modeling.ipynb), [rating-system](notebooks/rating-system.ipynb), [gridsearch](gridsearch.ipynb).
+Please review my full analysis in the [presentation](presentation/Letterboxd-Analysis-Presentation.pdf) or notebooks: [exploratory](notebooks/exploratory.ipynb), [modeling phase](notebooks/modeling.ipynb), [gridsearch](notebooks/gridsearch.ipynb).
 
 For any additional questions, please contact **Sierra Stanton** & stanton.sierraerin@gmail.com
+
+## Create  and activate the project environment:
+
+1. Navigate into the project directory
+2. Run the following command in terminal: conda env create -f environment.yml
+3. Run the following command in terminal: conda activate letterboxd
 
 ## Repository Structure
 
