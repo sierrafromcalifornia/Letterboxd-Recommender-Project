@@ -29,7 +29,7 @@ Our two datasets are the following:
 *  The Movie Data (`movie_data.csv`): this dataset gives us over 250K film's unique ID, title, and year of release.
 *  The Ratings Data (`ratings_export.csv`): this dataset shows over 8M recorded ratings from a range of 1-10 that Letterboxd's top 4,000 users have submitted according to the particular film. Note that on the app itself there is a five star scale, however the 1-10 split data reflects each half star by assigning it a number (4.5 becomes 9, 5 becomes 10).
 
-Due to the lengthy size of our datasets (over 250K films, 8M film reviews), I recommend heading to the Sam's link above for download instructions and to get the very latest version of scraped data.
+**NOTE:** Due to the lengthy size of our datasets (over 250K films, 8M film reviews), I recommend heading to the Sam's link above for download instructions and to get the very latest version of scraped data.
 
 ## Methods & Results
 
@@ -60,7 +60,7 @@ This goes beyond our Letterboxed analysis and is worth further exploration.
 * Deploying this project to production is an immediate next step and the foundation for how this process can be run is in development, with more time an MVP can be presented with questions posed to the user
 * If we were to use particular quantile groupings of user review activity to better understand the user and determine which grouping represents a general Letterboxd user - I believe this would be valuable. I can infer some of the users in our data are actually groups of people or organizations (i.e. anomalies of 70K+ reviews recorded and attributed to one username)
 * If we were to bring in additional data, say the review text and additional categorical film data, we could create increasingly helpful clustering around user film preferences to aid in discovery. We could also bring in sentiment analysis or a prompting question at the start of the discovery/recommendation process in order to recommend content based on a person's current mood or general temperament.
-* We focused on a collaborative filtering model in this project, but could perhaps further increase our accuracy with a hybrid approach (implicit and explicit, with a library like LightFM[here](https://github.com/lyst/lightfm))
+* We focused on a collaborative filtering model in this project, but could perhaps further increase our accuracy with a hybrid approach (implicit and explicit, with a library like [LightFM](https://github.com/lyst/lightfm))
 
 ## For More Information
 
@@ -90,6 +90,5 @@ For any additional questions, please contact **Sierra Stanton** & stanton.sierra
 ├── notebooks
 ├──── exploratory.ipynb
 ├──── modeling.ipynb
-├──── crossvalidation.ipynb
-├──── rating-system.ipynb
+├──── gridsearch.ipynb
 ```
